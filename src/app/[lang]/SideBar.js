@@ -1,11 +1,11 @@
-export default function SideBar() {
+export default function SideBar({dict}) {
     return (
         <header className="bg-gray-100 p-4 flex flex-col justify-between h-screen">
             <div>
                 <img className="rounded-full" style={{width: '175px'}}
                      src="https://d1qy7lc15wxwmt.cloudfront.net/images/profilepicture.jpg" alt="profile image"/>
                 <span>Paul Pladziewicz</span>
-                <span>Software Engineer</span>
+                <span>{dict.sidebar.profession}</span>
                 <span>Current working at InRhythm, consulting at E*TRADE/Morgan Stanley</span>
             </div>
             <ul>

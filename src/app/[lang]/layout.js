@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SideBar from "@/app/SideBar";
+import SideBar from "@/app/[lang]/SideBar";
+import {getDictionary} from "@/app/[lang]/dictionaries";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,13 +10,14 @@ export const metadata = {
   description: "Proven track record delivering quality software solutions.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ params: { lang }, children }) {
+  const dict = await getDictionary(lang)
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="flex">
           <div className="w-3/12">
-            <SideBar />
+            <SideBar dict={dict} />
           </div>
           <div className="w-9/12">
             {children}
