@@ -15,11 +15,11 @@ export default async function RootLayout({ params: { lang }, children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <div className="w-3/12">
-            <SideBar dict={dict} />
+        <div className="md:flex">
+          <div className="md:w-3/12">
+            <SideBar lang={lang} dict={dict} />
           </div>
-          <div className="w-9/12">
+          <div className="md:w-9/12">
             {children}
           </div>
         </div>

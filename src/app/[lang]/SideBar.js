@@ -1,4 +1,6 @@
-export default function SideBar({dict}) {
+import Link from "next/link";
+
+export default function SideBar({lang, dict}) {
     return (
         <header className="bg-gray-100 p-4 flex flex-col justify-between h-screen">
             <div>
@@ -9,7 +11,7 @@ export default function SideBar({dict}) {
                 <span>Current working at InRhythm, consulting at E*TRADE/Morgan Stanley</span>
             </div>
             <ul>
-                <li><a href="">About</a></li>
+                <li><Link href={`/${lang}/about`}>About</Link></li>
                 <li><a href="">Posts</a></li>
                 <li><a href="">Projects</a></li>
                 <li><a href="">Presentations</a></li>
